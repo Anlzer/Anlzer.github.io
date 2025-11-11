@@ -1668,3 +1668,93 @@ code {
 #header-post #actions {
   direction: ltr !important;
 }
+#nav {
+  position: relative;
+  z-index: 10;
+}
+#nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+/* 导航栏+统计文字的容器布局 */
+.header-container {
+  display: flex;
+  flex-direction: column /* 纵向上下排列 */;
+  gap: 12px /* 两个模块之间的间距 */;
+  padding: 15px 0 /* 上下内边距，避免贴边 */;
+}
+/* 导航栏模块样式 */
+.module-nav ul {
+  display: flex;
+  gap: 20px /* 导航项之间的间距 */;
+  list-style: none /* 清除列表圆点 */;
+  margin: 0;
+  padding: 0;
+}
+.module-nav a {
+  text-decoration: none /* 清除链接下划线 */;
+  color: #333 /* 文字颜色 */;
+}
+.module-nav a:hover {
+  color: #007bff /*  hover时变色 */;
+}
+/* 统计文字模块样式 */
+.module-stats {
+  font-size: 12px /* 文字缩小，区分主次 */;
+  color: #666 /* 浅灰色，降低视觉权重 */;
+  margin-left: 2px /* 轻微左移，对齐导航栏 */;
+}
+/* 页面基础样式 */
+body {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 20px;
+}
+/* 头部容器 */
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+/* 头像样式 */
+.blog-avatar .avatar-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+/* 若你的头像本身是图标样式，可去掉border-radius */
+/* border-radius: 50% */
+}
+/* 标题样式 */
+.blog-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+/* 导航栏样式 */
+.blog-nav {
+  margin-left: 20px;
+  font-size: 18px;
+}
+.blog-nav a {
+  color: #4caf50 /* 截图中的绿色 */;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.blog-nav span {
+  color: #fff;
+}
+/* 社交链接样式 */
+.social-links {
+  font-size: 16px;
+  color: #ccc;
+}
+.social-links .social-icon {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 3px;
+}
