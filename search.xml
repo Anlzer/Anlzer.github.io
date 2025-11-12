@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>从0开始学web</title>
+      <link href="/2025/11/12/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6web/"/>
+      <url>/2025/11/12/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6web/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一些解题的过程"><a href="#一些解题的过程" class="headerlink" title="一些解题的过程"></a>一些解题的过程</h1><p><strong>关于爆破</strong><br>这题我感觉我真的会用burp了。但是我每次导入Top1000，start都要特别长时间而且长度有不同的只有123456和000000.然后我真是有点无奈了。明天再试一次！<br><strong>web1</strong><br><img src="/images/2.png" alt="靶场的一道web题"><br>要利用PHP的弱类型比较特性来构造<br>在度娘的帮助下还是很快就解出了<br><strong>额，我忘了题目名字</strong><br><img src="/images/3.png" alt="靶场的一道web题"><br>这题也是在度娘帮助下完成的<br>本来想再写一个的，但是下一题好像需要下载Unicode太晚了，明天看看吧</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello world</title>
       <link href="/2025/11/11/hello-world-1/"/>
       <url>/2025/11/11/hello-world-1/</url>
