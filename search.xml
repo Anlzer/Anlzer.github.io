@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>第三周</title>
+      <link href="/2025/11/25/%E7%AC%AC%E4%B8%89%E5%91%A8/"/>
+      <url>/2025/11/25/%E7%AC%AC%E4%B8%89%E5%91%A8/</url>
+      
+        <content type="html"><![CDATA[<p>11.24<br>终于成功做出了内部靶场里的爆破，原来之前没做出来的原因是软件<br>按照流程使用burp suite爆破<br>成功，题目如图<br><img src="/images/6.png" alt="图片"><br>只需要把网址复制到burp的浏览器上（在proxy里），然后send to intruder里如图<br><img src="/images/8.png" alt="图片"><br>最后，完成啦<br><img src="/images/7.png" alt="图片"><br>11.25<br>我今天来尝试一下ctfshow<br>web1是利用base64解码写出的<br>看题<br><img src="/images/12.png" alt="图片"><br>工具<br><img src="/images/11.png" alt="图片"><br>做出来啦！<br><img src="/images/10.png" alt="图片"><br>现在做的是web2，一道sql注入题<br>看题<br><img src="/images/13.png" alt="图片"><br>在gpt的帮助下成功注入<br><img src="/images/14.png" alt="图片"><br>解题成功！<br><img src="/images/15.png" alt="图片"><br>好啦，今天就先写两道吧，要去复习一下高数了。。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第二周的学习笔记</title>
       <link href="/2025/11/23/%E7%AC%AC%E4%BA%8C%E5%91%A8/"/>
       <url>/2025/11/23/%E7%AC%AC%E4%BA%8C%E5%91%A8/</url>
