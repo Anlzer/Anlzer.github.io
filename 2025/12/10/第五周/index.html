@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="写的是ctfshow中的web入门：信息收集1-10web1：点鼠标右键，查看网页源代码，即可获得flagweb2:若无法查看源代码则在url前加view-source:或者直接按CTRL+U，即可获得flagweb3:把url复制到burp上抓包一下，具体是把url发送到重放器，发送请求，查看响应即可web4：给了一个提示（robos.txt可能泄露信息），利用robots协议来解题。robot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五周">
+<meta property="og:url" content="http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/index.html">
+<meta property="og:site_name" content="清嘉的个人博客">
+<meta property="og:description" content="写的是ctfshow中的web入门：信息收集1-10web1：点鼠标右键，查看网页源代码，即可获得flagweb2:若无法查看源代码则在url前加view-source:或者直接按CTRL+U，即可获得flagweb3:把url复制到burp上抓包一下，具体是把url发送到重放器，发送请求，查看响应即可web4：给了一个提示（robos.txt可能泄露信息），利用robots协议来解题。robot">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/24.png">
+<meta property="og:image" content="http://example.com/images/25.png">
+<meta property="og:image" content="http://example.com/images/26.png">
+<meta property="og:image" content="http://example.com/images/27.png">
+<meta property="og:image" content="http://example.com/images/28.png">
+<meta property="og:image" content="http://example.com/images/29.png">
+<meta property="og:image" content="http://example.com/images/30.png">
+<meta property="og:image" content="http://example.com/images/31.png">
+<meta property="og:image" content="http://example.com/images/32.png">
+<meta property="og:image" content="http://example.com/images/33.png">
+<meta property="og:image" content="http://example.com/images/34.png">
+<meta property="og:image" content="http://example.com/images/35.png">
+<meta property="og:image" content="http://example.com/images/36.png">
+<meta property="og:image" content="http://example.com/images/37.png">
+<meta property="og:image" content="http://example.com/images/38.png">
+<meta property="og:image" content="http://example.com/images/39.png">
+<meta property="og:image" content="http://example.com/images/40.png">
+<meta property="og:image" content="http://example.com/images/41.png">
+<meta property="og:image" content="http://example.com/images/42.png">
+<meta property="og:image" content="http://example.com/images/43.png">
+<meta property="og:image" content="http://example.com/images/44.png">
+<meta property="og:image" content="http://example.com/images/45.png">
+<meta property="og:image" content="http://example.com/images/46.png">
+<meta property="og:image" content="http://example.com/images/47.png">
+<meta property="og:image" content="http://example.com/images/48.png">
+<meta property="og:image" content="http://example.com/images/49.png">
+<meta property="og:image" content="http://example.com/images/50.png">
+<meta property="og:image" content="http://example.com/images/51.png">
+<meta property="og:image" content="http://example.com/images/52.png">
+<meta property="og:image" content="http://example.com/images/53.png">
+<meta property="og:image" content="http://example.com/images/54.png">
+<meta property="og:image" content="http://example.com/images/55.png">
+<meta property="og:image" content="http://example.com/images/56.png">
+<meta property="og:image" content="http://example.com/images/57.png">
+<meta property="og:image" content="http://example.com/images/58.png">
+<meta property="article:published_time" content="2025-12-10T11:06:51.000Z">
+<meta property="article:modified_time" content="2025-12-15T00:55:00.530Z">
+<meta property="article:author" content="Anlzer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/24.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>第五周</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/12/07/%E7%AC%AC%E5%9B%9B%E5%91%A8/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&text=第五周"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&is_video=false&description=第五周"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=第五周&body=Check out this article: http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&name=第五周&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&t=第五周"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        第五周
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Anlzer</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-12-10T11:06:51.000Z" class="dt-published" itemprop="datePublished">2025-12-10</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p><strong>写的是ctfshow中的web入门：信息收集1-10</strong><br>web1：<br>点鼠标右键，查看网页源代码，即可获得flag<br><img src="/images/24.png" alt="图片"><br>web2:若无法查看源代码则在url前加view-source:<br>或者直接按CTRL+U，即可获得flag<br><img src="/images/25.png" alt="图片"><br>web3:<br>把url复制到burp上抓包一下，具体是把url发送到重放器，发送请求，查看响应即可<br><img src="/images/26.png" alt="图片"><br><img src="/images/27.png" alt="图片"><br>web4：<br>给了一个提示（robos.txt可能泄露信息），利用robots协议来解题。<br>robots协议的核心是访问robots.txt文件并利用其泄露的消息<br>所以输入url&#x2F;robots.txt 如图<br><img src="/images/28.png" alt="图片"><br>得到了一个路径，复制该路径，访问，即得到flag<br><img src="/images/29.png" alt="图片"><br><img src="/images/30.png" alt="图片"><br>web5:<br>题目提示了php源码泄露，<br><img src="/images/31.png" alt="图片"><br>尝试访问url&#x2F;index.phps<br>得到了一个文件，打开就看到了flag<br><img src="/images/32.png" alt="图片"><br><img src="/images/33.png" alt="图片"><br>web6:<br>题目说解压源码到当前目录，通过目录扫描，获取地址，url&#x2F;<a target="_blank" rel="noopener" href="http://www.zip获得了一个zip文件(包含index.php和fl000g.txt)/">www.zip获得了一个zip文件（包含index.php和fl000g.txt）</a><br><img src="/images/34.png" alt="图片"><br><img src="/images/35.png" alt="图片"><br><img src="/images/36.png" alt="图片"><br><img src="/images/37.png" alt="图片"><br>然后访问url&#x2F;fl000g.txt即可得到flag<br><img src="/images/38.png" alt="图片"><br>web7:<br>题目提到版本控制（版本控制系统是一段时间内帮助跟踪代码中的更改的软件。当开发人员编辑代码时，版本控制系统会为文件拍摄快照，且开发人员都有通过git进行版本控制的习惯，在发布代码时，git目录没有删除，直接发布，使用此文件可以用来恢复源代码），于是这题我们通过输入url&#x2F;.git&#x2F;来得到这题flag，如图<br><img src="/images/39.png" alt="图片"><br><img src="/images/40.png" alt="图片"><br>web8:<br>也是利用版本控制原理，不过这题我们输入url&#x2F;.svn&#x2F;来得到flag<br><img src="/images/41.png" alt="图片"><br><img src="/images/42.png" alt="图片"><br>web9：<br>因为提示vim死机，而通常情况下vim的异常退出会留下.swp的缓存文件，所以url后加&#x2F;index.php.swp<br>得到一个文件，打开，即获取flag<br><img src="/images/43.png" alt="图片"><br><img src="/images/44.png" alt="图片"><br>web10：<br>点击F12，打开开发者工具，点击Application，从cookie中找到flag<br><img src="/images/45.png" alt="图片"><br><img src="/images/46.png" alt="图片"><br>web11：是利用DNS在线工具查询域名的Txt记录解题<br>web12：<br>url+&#x2F;admin&#x2F;,得到一个输入账号密码的网页，账号和密码都输入admin，出现flag<br><img src="/images/47.png" alt="图片"><br><img src="/images/48.png" alt="图片"><br><img src="/images/49.png" alt="图片"><br>web13：<br>这是一个网页，在网页底下看到了一个document，点击，出现了一个网址和账号密码，直接点该网址，加载不出网页，要把它拼接在靶机url后面，出现了一个登录界面，输入前面得到的账号密码，就获得flag了<br><img src="/images/50.png" alt="图片"><br><img src="/images/51.png" alt="图片"><br><img src="/images/52.png" alt="图片"><br><img src="/images/53.png" alt="图片"><br><img src="/images/54.png" alt="图片"><br>web14：<br>打开插入文件，寻找fl1000g.txt这个文件的具体位置，找到后把地址复制在靶机的url后，就得到这题的flag了<br><img src="/images/55.png" alt="图片"><br><img src="/images/56.png" alt="图片"><br><img src="/images/57.png" alt="图片"><br><img src="/images/58.png" alt="图片"></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&text=第五周"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&is_video=false&description=第五周"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=第五周&body=Check out this article: http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&title=第五周"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&name=第五周&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2025/12/10/%E7%AC%AC%E4%BA%94%E5%91%A8/&t=第五周"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2025
+    Anlzer
+  </div>
+  <div class="footer-right">
+  <!-- 导航栏：添加class="module-nav" -->
+  <nav class="module-nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/about/">About</a></li>
+      
+        <li><a href="/archives/">Writing</a></li>
+      
+        <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+      
+    </ul>
+  </nav>
+
+  <!-- 统计模块：新增，包裹在class="module-stats"中 -->
+  <div class="module-stats">
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+</div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
